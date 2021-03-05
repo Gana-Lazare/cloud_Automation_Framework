@@ -8,8 +8,8 @@
     <parameter name="os_version" value="7"></parameter>
     <parameter name="browserName" value="chrome"></parameter>
     <parameter name="browserVersion" value="88"></parameter>
-    <parameter name="envUserName" value="ganahamrioui1"></parameter>
-    <parameter name="envAccessKey" value="PumTSx2dywjMsyXLZpmZ"></parameter>
+    <parameter name="envUserName" value=""></parameter>
+    <parameter name="envAccessKey" value=""></parameter>
     <parameter name="url" value="https://www.airbnb.com/"></parameter>
 
 <test name="Smoke testing ">

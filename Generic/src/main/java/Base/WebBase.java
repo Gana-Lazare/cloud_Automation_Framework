@@ -32,6 +32,7 @@ public static WebDriver driver;
                 browserVersion,envUserName,envAccessKey);
     }
     driver.get(url);
+    driver.manage().window().maximize();
 }
   public static WebDriver getLocalDriver(@Optional("ChromeDriver") String browserName){
       if (browserName.equalsIgnoreCase("chrome")){

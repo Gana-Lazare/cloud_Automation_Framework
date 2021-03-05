@@ -12,6 +12,6 @@ public void init(){
 }
     @Test
     public void navigate(){
-        System.out.println("hhehe");
+
     }
 }
