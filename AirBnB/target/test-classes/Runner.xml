@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Ain Bnb HomePage TestSuite" parallel="false">
+
+    <parameter name="useCloudEnv" value="false"></parameter>
+    <parameter name="cloudEnvName" value="browserstack"></parameter>
+    <parameter name="os" value="windows"></parameter>
+    <parameter name="os_version" value="7"></parameter>
+    <parameter name="browserName" value="chrome"></parameter>
+    <parameter name="browserVersion" value="88"></parameter>
+    <parameter name="envUserName" value="ganahamrioui1"></parameter>
+    <parameter name="envAccessKey" value="PumTSx2dywjMsyXLZpmZ"></parameter>
+    <parameter name="url" value="https://www.airbnb.com/"></parameter>
+
+<test name="Smoke testing ">
+    <classes>
+        <class name="PageLayerTest.HomePage_AirBnB_Test"></class>
+    </classes>
+</test>
+</suite>

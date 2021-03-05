@@ -16,21 +16,22 @@ import java.net.URL;
 public class WebBase {
 public static WebDriver driver;
 
-    public String browserstack_username = "";
-    public String browserstack_accesskey = "";
-    public String sauceLab_username = "";
-    public String sauceLab_accesskey = "";
-    public String browserStackuserName="";
+
 @BeforeMethod
-@Parameters({"useCloudEnv", "cloudEnvName", "os", "os_version", "browserName", "browserVersion", "url"})
-  public static void setup(@Optional("false") boolean useCloudEnv) throws MalformedURLException {
+//exemple :true , OS X , Sierra , chrome , 88
+@Parameters({"useCloudEnv", "cloudEnvName", "os", "os_version", "browserName", "browserVersion", "url","envUserName","envAccessKey"})
+  public static void setup(@Optional("false") boolean useCloudEnv,@Optional("browserStack") String cloudEnvName,
+                           @Optional("windows") String os,@Optional("7") String os_version,
+                           @Optional("chrome") String  browserName , @Optional("88") String  browserVersion,
+                           @Optional("user") String envUserName ,@Optional("envkey") String envAccessKey ,
+                           @Optional("https://google.com")String url ) throws MalformedURLException {
     if (useCloudEnv==false){
-    driver=getLocalDriver("chrome");}
+    driver=getLocalDriver(browserName);}
     if (useCloudEnv==true){
-        driver=getCloudDriver("browserstack","OS X","Sierra","chrome",
-                "88","ganahamrioui1","PumTSx2dywjMsyXLZpmZ");
+        driver=getCloudDriver(cloudEnvName,os,os_version,browserName,
+                browserVersion,envUserName,envAccessKey);
     }
-    driver.get("https://us.louisvuitton.com/");
+    driver.get(url);
 }
   public static WebDriver getLocalDriver(@Optional("ChromeDriver") String browserName){
       if (browserName.equalsIgnoreCase("chrome")){
@@ -64,6 +65,6 @@ public static WebDriver driver;
     driver.quit();
   }
   public static void main(String[] args) throws MalformedURLException {
-      setup(true);
+
   }
 }
